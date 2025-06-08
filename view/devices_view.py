@@ -33,3 +33,11 @@ def show_device_detail(device: dict) -> None:
     print(f'Ubicación: {device["location"]}')
     print(f'Hogar: {device["home"]}')
     print('-' * 40)
+
+
+def display_device_deletion_result(success: bool) -> None:
+    """Muestra un mensaje dependiendo del resultado de eliminar un dispositivo."""
+    if success:
+        print('\nDispositivo eliminado correctamente.\n')
+    else:
+        print('\nNo se pudo eliminar el dispositivo.\n')

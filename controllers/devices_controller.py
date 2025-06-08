@@ -50,3 +50,15 @@ def search_device_by_name(email_user: str, device_name: str, states: dict, types
             return map_device_data_for_view(device, states, types_device, locations, homes)
     
     return None  # No se encontró el dispositivo
+
+
+def delete_device_by_name(email_user: str, device_name: str) -> bool:
+    """Elimina un dispositivo si el usuario está autorizado para el hogar al que pertenece."""
+    home_ids = get_home_ids_by_email(email_user, userxhome)
+
+    for i, device in enumerate(devices):
+        if device['id_home'] in home_ids and device['name'].lower() == device_name.lower():
+            del devices[i]  # Eliminar el dispositivo por índice
+            return True
+    
+    return False  # No se encontró o no se tiene permiso
