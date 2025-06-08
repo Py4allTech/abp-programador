@@ -39,3 +39,14 @@ def get_user_devices(email_user: str, states: dict, types_device: dict, location
 
     # Mapear los datos para visualización (convertir IDs en nombres)
     return [map_device_data_for_view(d, states, types_device, locations, homes) for d in user_devices]
+
+
+def search_device_by_name(email_user: str, device_name: str, states: dict, types_device: dict, locations: dict, homes: dict) -> dict | None:
+    """Busca un dispositivo por nombre dentro de los hogares del usuario."""
+    home_ids = get_home_ids_by_email(email_user, userxhome)
+    
+    for device in devices:
+        if device['id_home'] in home_ids and device['name'].lower() == device_name.lower():
+            return map_device_data_for_view(device, states, types_device, locations, homes)
+    
+    return None  # No se encontró el dispositivo

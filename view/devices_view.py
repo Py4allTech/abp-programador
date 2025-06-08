@@ -19,3 +19,17 @@ def show_user_devices(devices: list[dict]) -> None:
         print(f'Ubicación: {device["location"]}')
         print(f'Hogar: {device["home"]}')
         print('-' * 40)
+
+
+def show_device_detail(device: dict) -> None:
+    """Muestra los detalles de un dispositivo individual."""
+    if not device:
+        print('\nNo se encontró el dispositivo.\n')
+        return
+
+    print(f'\nNombre: {device["name"]}')
+    print(f'Estado: {device["state"]}')
+    print(f'Tipo: {device["type"]}')
+    print(f'Ubicación: {device["location"]}')
+    print(f'Hogar: {device["home"]}')
+    print('-' * 40)
