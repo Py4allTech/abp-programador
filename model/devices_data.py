@@ -1,0 +1,2 @@
+# Lista de dispositivos
+devices = []
