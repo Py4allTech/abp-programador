@@ -1,4 +1,6 @@
-home=[{
-  "id":1,
-  "name":"homee-1",
-}]
+home = [
+    {
+        "id": 1,
+        "name": "homee-1",
+    }
+]

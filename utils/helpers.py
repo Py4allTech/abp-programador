@@ -1,5 +1,6 @@
 device_id_counter = 1  # Variable global para contar los IDs
 
+
 def get_user_input(message: str) -> str:
     return input(message).strip().lower()
 
