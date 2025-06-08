@@ -37,3 +37,24 @@ def request_and_validate_element(prompt: str, data_base: list[dict], key_name: s
         if element:
             return element
         print('Entrada inválida. Intente nuevamente.')
+
+
+def get_name_by_id(data_base: list[dict], id_value: int, id_key: str = 'id', name_key: str = 'name') -> str:
+    """Obtiene el nombre de un elemento en base a su ID."""
+    for item in data_base:
+        if item[id_key] == id_value:
+            return item[name_key]
+
+
+def map_device_data_for_view(device: dict, states: dict, types_device: dict, locations: dict, homes: dict) -> dict:
+    """
+    Convierte los IDs de un dispositivo a sus nombres legibles,
+    para ser mostrados en la vista.
+    """
+    return {
+        'name': device['name'],
+        'state': get_name_by_id(states, device['id_state']),
+        'type': get_name_by_id(types_device, device['id_type']),
+        'location': get_name_by_id(locations, device['id_location']),
+        'home': get_name_by_id(homes, device['id_home'], id_key='id', name_key='name')
+    }
