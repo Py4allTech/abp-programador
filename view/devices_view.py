@@ -1,3 +1,13 @@
+def show_main_menu() -> None:
+    """Muestra el menú principal de opciones al usuario."""
+    print('Bienvenido al sistema de gestión de dispositivos.')
+    print('1. Agregar dispositivo')
+    print('2. Listar Dispositivos')
+    print('3. Buscar Dispositivo')
+    print('4. Eliminar Dispositivo')
+    print('0. Salir')
+
+
 def display_device_addition_result(success: bool) -> None:
     """Muestra un mensaje dependiendo del resultado de agregar un dispositivo."""
     if success:
