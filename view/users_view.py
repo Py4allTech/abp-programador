@@ -37,9 +37,9 @@ def show_login() -> Dict:
 
 
 def show_register() -> Dict:
-    username: str = get_user_input("Ingresa tu nombre de usuario").strip()
-    email: str = get_user_input("Ingresa tu email").strip()
-    password: str = get_user_input("ingresa tu contraseña").strip()
+    username: str = get_user_input("Ingresa tu nombre de usuario: ").strip()
+    email: str = get_user_input("Ingresa tu email: ").strip()
+    password: str = get_user_input("ingresa tu contraseña: ").strip()
     return {"username": username, "email": email, "password": password}
 
 
@@ -70,6 +70,7 @@ def main_login() -> Optional[Dict]:
             if result["success"]:
                 return result["user_data"]
             # Si falla el login, continúa el bucle para intentar de nuevo
+
 
 def show_menu_by_role(user_data: Dict) -> None:
     """Muestra el menú apropiado según el rol del usuario"""
