@@ -8,7 +8,6 @@ from utils.devices_utils import (
     map_device_data_for_view
 )
 
-
 def add_device(email_user, name, selected_state, selected_type, selected_location, selected_home) -> bool:
     """Agrega un nuevo dispositivo si el usuario está autorizado para el hogar seleccionado."""
     home_id = selected_home['id']
